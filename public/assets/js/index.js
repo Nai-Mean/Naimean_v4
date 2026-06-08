@@ -1,37 +1,35 @@
-// 1. Add a global lock variable
-let isSecretPlaying = false;
+// public/assets/js/index.js
 
-// 2. Wrap your sound player
-async function playSecretSound() {
-    if (isSecretPlaying) return;
-    
-    isSecretPlaying = true;
-    const audio = new Audio('/assets/audio/zelda_secret.wav');
-    
-    // Lock standard pings until this finishes
-    audio.onended = () => {
-        isSecretPlaying = false;
-    };
-    
-    await audio.play();
-}
+// Core
+import { initDomRefs } from './core/domRefs.js';
 
-// 3. Update your increment logic
-function incrementCornerScore(amount) {
-    localScore += amount;
-    
-    if (localScore === -999) {
-        playSecretSound(); // This is now safe and locked
-        return; 
-    }
+// Systems
+import { initMonitors } from './systems/monitors.js';
+import { initCornerScore } from './systems/cornerScore.js';
 
-    // Only play the ping if the secret is NOT playing
-    if (!isSecretPlaying) {
-        playStandardPingSound(); 
-    }
+// As we build more systems, you will uncomment/add these:
+// import { initDvd } from './systems/dvd.js';
+// import { initAquarium } from './systems/aquarium.js';
+// import { initPrompt } from './systems/prompt.js';
+// import { initLogin } from './systems/login.js';
+// import { initTools } from './systems/tools.js';
+// import { initHotspots } from './systems/hotspots.js';
+// import { initPerformance } from './ui/performance.js';
 
-    syncLocalToWhiteboard();
-    if (localScore > cornerScoreHighScoreValue) {
-        syncCornerScoreInitialsPromptVisibility(true);
-    }
-}
+window.addEventListener('DOMContentLoaded', () => {
+  // Core DOM references
+  initDomRefs();
+
+  // Systems
+  initMonitors();
+  initCornerScore();
+
+  // Later, when modules are ready:
+  // initDvd();
+  // initAquarium();
+  // initPrompt();
+  // initLogin();
+  // initTools();
+  // initHotspots();
+  // initPerformance();
+});
