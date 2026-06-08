@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naimean v4</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+
+    <!-- LOGIN SCREEN -->
+    <div id="login-screen" class="login-screen active">
+        <div class="login-box">
+            <h2>Enter the Den</h2>
+            <input id="login-user" type="text" placeholder="username" />
+            <input id="login-pass" type="password" placeholder="password" />
+            <button id="login-button">Login</button>
+            <div id="login-error" class="login-error"></div>
+        </div>
+    </div>
+
+    <!-- MAIN DEN -->
+    <div id="den-container" class="den-container">
+
+        <!-- LEFT MONITOR -->
+        <div id="left-monitor" class="monitor left-monitor"></div>
+
+        <!-- BIG TV -->
+        <div id="big-tv" class="big-tv">
+            <img id="dvd-logo" class="dvd-logo" src="./assets/img/dvd.png" />
+        </div>
+
+        <!-- RIGHT MONITOR -->
+        <div id="right-monitor" class="monitor right-monitor"></div>
+
+        <!-- PROMPT -->
+        <div id="prompt-container" class="prompt-container">
+            <div id="prompt-output" class="prompt-output"></div>
+            <input id="prompt-input" class="prompt-input" autocomplete="off" />
+        </div>
+
+        <!-- TOOLS PANEL -->
+        <div id="tools-panel" class="tools-panel">
+            <button data-action="restart-dvd">Restart DVD</button>
+            <button data-action="restart-aquarium">Restart Aquarium</button>
+            <button data-action="clear-monitor-left">Clear Left Monitor</button>
+            <button data-action="clear-monitor-right">Clear Right Monitor</button>
+            <button data-action="toggle-prompt">Toggle Prompt</button>
+        </div>
+
+        <!-- TOOLS TOGGLE -->
+        <div id="tools-toggle" class="tools-toggle">TOOLS</div>
+
+        <!-- PERFORMANCE OVERLAY -->
+        <div id="performance-panel" class="performance-panel">
+            <div id="perf-fps">0 FPS</div>
+            <div id="perf-cpu">CPU: 0%</div>
+            <div id="perf-mem">MEM: 0%</div>
+        </div>
+        <div id="performance-toggle" class="performance-toggle">PERF</div>
+
+        <!-- HOTSPOTS -->
+        <div id="hotspot-tools" class="hotspot hotspot-tools"></div>
+        <div id="hotspot-prompt" class="hotspot hotspot-prompt"></div>
+        <div id="hotspot-login" class="hotspot hotspot-login"></div>
+        <div id="hotspot-left-monitor" class="hotspot hotspot-left-monitor"></div>
+        <div id="hotspot-right-monitor" class="hotspot hotspot-right-monitor"></div>
+
+    </div>
+
+    <script type="module" src="./assets/js/index.js"></script>
+</body>
+</html>
