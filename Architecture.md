@@ -1,0 +1,26 @@
+public/
+  index.html
+  assets/
+    js/
+      core/
+        constants.js
+        state.js
+        utils.js
+        media.js
+        domRefs.js
+      systems/
+        monitors.js
+        dvd.js
+        cornerScore.js
+        aquarium.js
+        prompt.js
+        login.js
+        tools.js
+        hotspots.js
+      ui/
+        overlays.js
+        performance.js
+      index.js
+    css/
+    video/
+    images/
