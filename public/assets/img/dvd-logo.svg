@@ -1,3 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 256" fill="white">
-  <path d="M63 64h108c44 0 79 35 79 79s-35 79-79 79H63V64zm48 40v78h60c22 0 39-17 39-39s-17-39-39-39H111zm198-40h44l54 158h-44l-11-38h-56l-11 38h-44l54-158zm22 40l-17 60h34l-17-60zm120-40h108c44 0 79 35 79 79s-35 79-79 79H393V64zm48 40v78h60c22 0 39-17 39-39s-17-39-39-39h-60z"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 260" fill="white">
+  <!-- Slightly more obtuse disc arc -->
+  <path d="M40 180c0-70 90-120 220-120s220 50 220 120" 
+        stroke="white" stroke-width="28" fill="none" 
+        stroke-linecap="round"/>
+
+  <!-- Stylized D -->
+  <path d="M60 70h80c50 0 90 35 90 60s-40 60-90 60H60V70z
+           M110 110v40h30c20 0 30-10 30-20s-10-20-30-20h-30z"/>
+
+  <!-- Stylized V -->
+  <path d="M230 70h60l50 120h-55l-25-70l-25 70h-55z"/>
+
+  <!-- Stylized D (mirrored) -->
+  <path d="M350 70h80c50 0 90 35 90 60s-40 60-90 60h-80V70z
+           M400 110v40h30c20 0 30-10 30-20s-10-20-30-20h-30z"/>
 </svg>
