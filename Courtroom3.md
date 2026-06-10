@@ -2,9 +2,7 @@ Court Operations
 
 Purpose
 
-Court Operations define how a case moves through the Trojan Courthouse.
-
-Every proceeding follows the same lifecycle regardless of subject matter.
+Court Operations define how a medication case moves through the Trojan Courthouse.
 
 The objective is to transform testimony into Canon through examination, challenge, voting, and arbitration.
 
@@ -12,93 +10,39 @@ The Court does not assume truth.
 
 The Court investigates truth.
 
+This document describes the operational workflow used during Phase 1 Medication Proceedings.
+
+Future expansion is defined separately within the AI Core Phase Doctrine.
+
 ⸻
 
-Filing
+Medication Filing
 
-Every proceeding begins with a filing.
+Every proceeding begins with a medication filing.
 
-A filing contains the question, issue, medication, problem, or topic to be examined.
+Supported inputs include:
+
+* Medication Name
+* Medication Name + Strength
 
 Examples:
 
+* Vistaril
 * Vistaril 50 mg
 * Lorazepam 1 mg
-* Compare React and Vue
-* Design a database schema
-* Analyze a treatment protocol
+* Suboxone 8 mg / 2 mg
 
 The filing becomes the official case record.
 
 ⸻
 
-Case Qualification
-
-Not every filing automatically qualifies as a valid court proceeding.
-
-Before testimony begins, Odysseus evaluates whether enough information exists to support meaningful examination.
-
-Examples of insufficient filings:
-
-* Help me code
-* Fix this
-* Tell me about databases
-* What’s best?
-
-These filings lack sufficient context.
-
-The Court requests clarification when necessary.
-
-Examples:
-
-* Desired outcome
-* Environment
-* Constraints
-* Existing implementation
-* Supporting documentation
-* Scope
-
-The Court prefers delayed adjudication over low-quality Canon.
-
-⸻
-
-Fallback Mode
-
-If a filing remains insufficient after clarification attempts, the Court shall decline to convene.
-
-Instead, the user may select a model directly.
-
-Examples:
-
-* GPT
-* Gemini
-* Claude
-* MedGemma
-* Local Ollama Models
-
-The selected model answers the question directly.
-
-The response is displayed on the Big Screen.
-
-No witnesses are seated.
-
-No voting occurs.
-
-No Canon is generated.
-
-No Hall of Canon record is created.
-
-The response represents the opinion of a single model rather than a Court ruling.
-
-⸻
-
 Witness Assignment
 
-Once a filing qualifies, the Court convenes.
+Once a filing is accepted, the Court convenes.
 
 Three witnesses are selected.
 
-Witnesses are chosen randomly from eligible models.
+Witnesses are chosen from eligible models.
 
 Court identities are assigned.
 
@@ -110,7 +54,7 @@ Witness B : ORACLE
 
 Witness C : T-1000
 
-Underlying model identities remain hidden.
+Underlying model identities remain concealed.
 
 The Trojan Protocol is activated.
 
@@ -130,21 +74,15 @@ During active proceedings:
 
 Participants see only Court identities.
 
-Examples:
-
-* TARS
-* ORACLE
-* T-1000
-
 The purpose is to eliminate model bias.
 
 ⸻
 
 Independent Testimony
 
-Each witness initially reviews the filing in isolation.
+Each witness reviews the medication independently.
 
-Witnesses do not see:
+Witnesses do not initially see:
 
 * Other testimony
 * Other findings
@@ -152,16 +90,44 @@ Witnesses do not see:
 
 Witnesses produce independent testimony.
 
-Each witness may provide:
+Examples may include:
 
-* Findings
-* Recommendations
-* Risks
-* Supporting rationale
-* Warnings
-* Alternative viewpoints
+* Side Effects
+* Warning Signs
+* Monitoring Recommendations
+* Contraindications
+* Mechanisms of Action
+* Clinical Recommendations
 
 This phase maximizes independent discovery.
+
+⸻
+
+Stenographer Supplemental Findings
+
+Prior to Cross Examination, the Stenographer may introduce Supplemental Findings.
+
+Supplemental Findings are intended to capture clinically significant observations omitted by all witnesses.
+
+Examples may include:
+
+* Medication interactions
+* Safety concerns
+* Monitoring recommendations
+* Contraindications
+* High-risk adverse effects
+
+Supplemental Findings enter the proceeding anonymously.
+
+No participant is informed which findings originated from the Stenographer.
+
+Supplemental Findings receive no special authority.
+
+Supplemental Findings must survive the same Court process as witness findings.
+
+Accepted Supplemental Findings may become Canon.
+
+Rejected Supplemental Findings remain preserved within the case record.
 
 ⸻
 
@@ -173,6 +139,7 @@ Witnesses receive:
 
 * Their own testimony
 * Other witness testimony
+* Anonymous Supplemental Findings
 
 Witnesses are expected to:
 
@@ -193,25 +160,51 @@ Cross Examination exists to reduce hallucinations and strengthen findings before
 
 Stenographer Review
 
-The Stenographer reviews the completed proceeding.
-
 The Stenographer remains blinded by the Trojan Protocol.
 
 The Stenographer does not know:
 
 * Witness identities
-* Underlying models
+* Underlying model identities
 * Historical performance
 
-The Stenographer extracts all claims.
+The Stenographer is responsible for:
 
-Nothing is deleted.
+* Claim Extraction
+* Fact Family Construction
+* Duplicate Identification
+* Voting Packet Generation
+* Court Record Preservation
 
-Nothing is merged.
+The Stenographer also participates in voting.
 
-Nothing is rewritten.
+The fourth vote exists to permit deadlocks and judicial review.
 
-Every claim is preserved.
+The Stenographer serves as the Court’s medical specialist.
+
+⸻
+
+Stenographer Canon Candidates
+
+Prior to Wording Voting, the Stenographer may submit Alternative Canon Wording.
+
+Alternative Canon Wording is intended to improve:
+
+* Clinical Accuracy
+* Safety Communication
+* Actionability
+* Clarity
+* Clinical Relevance
+
+Alternative wording enters the proceeding anonymously.
+
+No participant is informed which wording originated from the Stenographer.
+
+Alternative wording receives no special authority.
+
+The Court evaluates Stenographer wording exactly as it evaluates witness wording.
+
+Alternative wording must survive the same voting process as all other wording candidates.
 
 ⸻
 
@@ -230,6 +223,11 @@ C-003
 Claims remain traceable throughout the proceeding.
 
 The Court never loses the original testimony.
+
+Claims may originate from:
+
+* Witness Testimony
+* Stenographer Supplemental Findings
 
 ⸻
 
@@ -258,6 +256,10 @@ Fact Family F-014
 The underlying fact is grouped.
 
 The original wording remains preserved.
+
+Fact Family construction does not alter testimony.
+
+Fact Family construction organizes testimony.
 
 ⸻
 
@@ -288,6 +290,10 @@ Possible Outcomes:
 
 Consensus outcomes do not require Judge review.
 
+Deadlocks are escalated to the Judge.
+
+All accepted facts proceed to Wording Voting.
+
 ⸻
 
 Deadlocks
@@ -312,33 +318,18 @@ Question:
 
 Which wording best represents the accepted fact?
 
+Eligible wording candidates may originate from:
+
+* Witness Testimony
+* Stenographer Canon Candidates
+
 The Court does not rewrite findings.
 
-The Court selects from existing testimony.
+The Court selects from submitted wording candidates.
 
 The wording receiving the highest support becomes Canon wording.
 
 Tied wording selections are escalated to the Judge.
-
-⸻
-
-Canon Wording Evaluation
-
-Wording candidates are scored according to:
-
-Clinical Accuracy
-
-Safety Impact
-
-Actionability
-
-Clinical Relevance
-
-Clarity
-
-Efficiency
-
-The objective is to produce the most clinically useful wording rather than the most verbose wording.
 
 ⸻
 
@@ -412,11 +403,11 @@ Example:
 
 Witness A : TARS : GPT-5
 
-Witness B : ORACLE : Gemini 2.5 Pro
+Witness B : ORACLE : Gemini
 
 Witness C : T-1000 : MedGemma
 
-Judge : ATHENA : Claude Opus
+Judge : ATHENA : Claude
 
 Stenographer : DATA : MedGemma
 
@@ -434,10 +425,14 @@ The report contains:
 * Rejected Facts
 * Judge Decisions
 * Canon Wording
-* Performance Updates
 * Attribution
+* Performance Updates
 
 The Bailiff announces the outcome of the proceeding.
+
+The Bailiff identifies top contributors.
+
+The Bailiff updates performance records.
 
 ⸻
 
@@ -451,7 +446,6 @@ Canon is published to:
 
 * The Big Screen
 * The Hall of Canon
-* Statistics Systems
 
 Rejected findings remain preserved within the case record.
 
@@ -480,43 +474,17 @@ The Hall of Canon serves as the permanent institutional memory of Odysseus.
 
 ⸻
 
-Performance Doctrine
-
-Agent performance is recorded.
-
-Agent performance is trended.
-
-Agent performance is archived.
-
-Performance does not influence voting authority.
-
-Performance does not influence witness selection.
-
-Performance does not influence judicial authority.
-
-Every proceeding begins with equal authority.
-
-Performance determines reputation.
-
-Performance does not determine power.
-
-⸻
-
 Court Operations Summary
 
-File Case
+Medication Filing
 
 ↓
 
-Qualify Case
+Witness Assignment
 
 ↓
 
-Assign Witnesses
-
-↓
-
-Activate Trojan Protocol
+Trojan Protocol Activation
 
 ↓
 
@@ -524,11 +492,15 @@ Independent Testimony
 
 ↓
 
+Stenographer Supplemental Findings
+
+↓
+
 Cross Examination
 
 ↓
 
-Stenographer Review
+Claim Extraction
 
 ↓
 
@@ -557,7 +529,3 @@ Canon Publication
 ↓
 
 Hall of Canon Archive
-
-↓
-
-Statistics Update
