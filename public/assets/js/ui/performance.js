@@ -1,74 +1,84 @@
 // ui/performance.js
 
 import { dom } from '../core/domRefs.js';
+import { state } from '../core/state.js';
 
 // ------------------------------------------------------
 // INTERNAL STATE
 // ------------------------------------------------------
 let lastFrameTime = performance.now();
-let fps = 0;
 let frameCount = 0;
-let fpsTimer = 0;
-let perfInterval = null;
+let fps = 0;
 
 // ------------------------------------------------------
-// UPDATE LOOP
+// FPS CALCULATION
 // ------------------------------------------------------
-function updatePerformance() {
+function updateFps() {
     const now = performance.now();
-    const delta = now - lastFrameTime;
-    lastFrameTime = now;
-
     frameCount++;
-    fpsTimer += delta;
 
-    // Update FPS every 500ms
-    if (fpsTimer >= 500) {
-        fps = Math.round((frameCount / fpsTimer) * 1000);
+    if (now - lastFrameTime >= 1000) {
+        fps = frameCount;
         frameCount = 0;
-        fpsTimer = 0;
+        lastFrameTime = now;
 
-        if (dom.perfFps) {
-            dom.perfFps.textContent = `${fps} FPS`;
-        }
+        state.performance.fps = fps;
+        if (dom.perfFps) dom.perfFps.textContent = `${fps}`;
     }
 
-    // Fake CPU + Memory load (visual only)
-    if (dom.perfCpu) {
-        dom.perfCpu.textContent = `${Math.floor(20 + Math.random() * 40)}%`;
-    }
-
-    if (dom.perfMem) {
-        dom.perfMem.textContent = `${Math.floor(30 + Math.random() * 50)}%`;
-    }
-
-    requestAnimationFrame(updatePerformance);
+    requestAnimationFrame(updateFps);
 }
 
 // ------------------------------------------------------
-// TOGGLE
+// MEMORY USAGE (Chrome only)
 // ------------------------------------------------------
-function togglePerformance() {
-    if (!dom.performancePanel) return;
-    dom.performancePanel.classList.toggle('visible');
+function updateMemory() {
+    if (performance.memory && dom.perfMem) {
+        const used = performance.memory.usedJSHeapSize / 1048576; // MB
+        const total = performance.memory.totalJSHeapSize / 1048576;
+
+        dom.perfMem.textContent = `${used.toFixed(1)} / ${total.toFixed(1)} MB`;
+        state.performance.mem = used;
+    }
+}
+
+// ------------------------------------------------------
+// CPU (simulated load indicator)
+// ------------------------------------------------------
+function updateCpu() {
+    // Browsers do NOT expose real CPU usage.
+    // This gives a smooth, believable indicator.
+    const load = Math.floor(Math.random() * 20) + 5; // 5–25%
+    state.performance.cpu = load;
+
+    if (dom.perfCpu) {
+        dom.perfCpu.textContent = `${load}%`;
+    }
+}
+
+// ------------------------------------------------------
+// MAIN LOOP
+// ------------------------------------------------------
+function tick() {
+    updateMemory();
+    updateCpu();
+    setTimeout(tick, 500);
 }
 
 // ------------------------------------------------------
 // PUBLIC INIT
 // ------------------------------------------------------
 export function initPerformance() {
-    if (!dom.performancePanel) {
-        console.warn('Performance panel DOM missing — skipping performance init');
+    if (!dom.perfPanel) {
+        console.warn('Performance panel not found — skipping performance init');
         return;
     }
 
-    // Toggle button
-    if (dom.performanceToggle) {
-        dom.performanceToggle.addEventListener('click', togglePerformance);
-    }
+    // Start FPS loop
+    requestAnimationFrame(updateFps);
 
-    // Start update loop
-    requestAnimationFrame(updatePerformance);
+    // Start CPU/memory loop
+    tick();
 
     console.log('Performance overlay initialized');
 }
