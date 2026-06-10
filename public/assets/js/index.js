@@ -64,6 +64,30 @@ function init() {
     // 1. DOM references
     initDomRefs();
 
+    // --------------------------------------------------
+    // DEV MODE: Skip login + skip boot animations
+    // --------------------------------------------------
+    if (state.devMode) {
+        console.warn('DEV MODE ENABLED — Skipping login + boot animations');
+
+        // Instantly unlock the Den
+        if (dom.loginScreen) dom.loginScreen.classList.remove('active');
+        if (dom.denContainer) dom.denContainer.classList.add('active');
+
+        // Skip login system entirely
+        // Skip monitor boot animations
+        // Still initialize everything else
+        initDvd();
+        initAquarium();
+        initPrompt();
+        initTools();
+        initHotspots();
+        initPerformance();
+
+        debugBoot();
+        return;
+    }
+
     // 2. Login system (locks the Den)
     initLogin();
 
