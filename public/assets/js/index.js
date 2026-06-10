@@ -56,6 +56,23 @@ function debugBoot() {
 }
 
 // ------------------------------------------------------
+// DEV MODE KEYBOARD TOGGLE (Ctrl + Shift + D)
+// ------------------------------------------------------
+window.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'd') {
+        state.devMode = !state.devMode;
+
+        console.warn(
+            `%cDEV MODE ${state.devMode ? 'ENABLED' : 'DISABLED'}`,
+            `color:${state.devMode ? '#0f0' : '#f00'};font-weight:bold;`
+        );
+
+        // Reload the page to apply the new mode cleanly
+        location.reload();
+    }
+});
+
+// ------------------------------------------------------
 // MAIN INITIALIZATION
 // ------------------------------------------------------
 function init() {
@@ -65,18 +82,14 @@ function init() {
     initDomRefs();
 
     // --------------------------------------------------
-    // DEV MODE: Skip login + skip boot animations
+    // DEV MODE: Skip login + boot animations
     // --------------------------------------------------
     if (state.devMode) {
         console.warn('DEV MODE ENABLED — Skipping login + boot animations');
 
-        // Instantly unlock the Den
         if (dom.loginScreen) dom.loginScreen.classList.remove('active');
         if (dom.denContainer) dom.denContainer.classList.add('active');
 
-        // Skip login system entirely
-        // Skip monitor boot animations
-        // Still initialize everything else
         initDvd();
         initAquarium();
         initPrompt();
@@ -88,16 +101,16 @@ function init() {
         return;
     }
 
-    // 2. Login system (locks the Den)
+    // 2. Login system
     initLogin();
 
     // 3. Monitors boot sequence
     initMonitors();
 
-    // 4. DVD system (Big TV)
+    // 4. DVD system
     initDvd();
 
-    // 5. Aquarium system (Right monitor)
+    // 5. Aquarium system
     initAquarium();
 
     // 6. Prompt terminal
