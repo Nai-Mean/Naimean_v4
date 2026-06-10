@@ -3,7 +3,7 @@
 // ------------------------------------------------------
 // CORE IMPORTS
 // ------------------------------------------------------
-import { initDomRefs } from './core/domRefs.js';
+import { initDomRefs, dom } from './core/domRefs.js';
 import { state } from './core/state.js';
 
 // ------------------------------------------------------
@@ -17,6 +17,43 @@ import { initPrompt } from './systems/prompt.js';
 import { initTools } from './systems/tools.js';
 import { initHotspots } from './systems/hotspots.js';
 import { initPerformance } from './ui/performance.js';
+
+// ------------------------------------------------------
+// DEBUG BOOT STATUS
+// ------------------------------------------------------
+function debugBoot() {
+    console.log('%cNaimean v4 — Boot Status', 'color:#0f0;font-weight:bold;');
+
+    console.table({
+        loginScreen: !!dom.loginScreen,
+        denContainer: !!dom.denContainer,
+
+        leftMonitor: !!dom.leftMonitor,
+        rightMonitor: !!dom.rightMonitor,
+        bigTv: !!dom.bigTv,
+        commodore: !!dom.commodore,
+
+        dvdLogo: !!dom.dvdLogo,
+
+        promptContainer: !!dom.promptContainer,
+        promptOutput: !!dom.promptOutput,
+        promptInput: !!dom.promptInput,
+
+        toolsPanel: !!dom.toolsPanel,
+        toolsToggle: !!dom.toolsToggle,
+
+        hotspotTools: !!dom.hotspotTools,
+        hotspotPrompt: !!dom.hotspotPrompt,
+        hotspotLogin: !!dom.hotspotLogin,
+        hotspotLeftMonitor: !!dom.hotspotLeftMonitor,
+        hotspotRightMonitor: !!dom.hotspotRightMonitor,
+
+        performancePanel: !!dom.perfPanel,
+        perfFps: !!dom.perfFps,
+        perfCpu: !!dom.perfCpu,
+        perfMem: !!dom.perfMem
+    });
+}
 
 // ------------------------------------------------------
 // MAIN INITIALIZATION
@@ -50,6 +87,9 @@ function init() {
 
     // 9. Performance overlay
     initPerformance();
+
+    // 10. Debug boot status
+    debugBoot();
 
     console.log('Naimean v4 initialized.');
 }
