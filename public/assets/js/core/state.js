@@ -4,6 +4,9 @@
 // GLOBAL STATE OBJECT
 // ------------------------------------------------------
 export const state = {
+    // Developer mode (skip login + boot animations)
+    devMode: false,
+
     // Login / access
     isLocked: true,
 
