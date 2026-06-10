@@ -1,44 +1,60 @@
-// public/assets/js/index.js
+// index.js (entry point for Naimean v4)
 
 // ------------------------------------------------------
-// CORE
+// CORE IMPORTS
 // ------------------------------------------------------
 import { initDomRefs } from './core/domRefs.js';
+import { state } from './core/state.js';
 
 // ------------------------------------------------------
-// SYSTEMS
+// SYSTEM IMPORTS
 // ------------------------------------------------------
+import { initLogin } from './systems/login.js';
 import { initMonitors } from './systems/monitors.js';
-import { initCornerScore } from './systems/cornerScore.js';
 import { initDvd } from './systems/dvd.js';
 import { initAquarium } from './systems/aquarium.js';
 import { initPrompt } from './systems/prompt.js';
-import { initLogin } from './systems/login.js';
 import { initTools } from './systems/tools.js';
 import { initHotspots } from './systems/hotspots.js';
-
-// ------------------------------------------------------
-// UI / PERFORMANCE
-// ------------------------------------------------------
 import { initPerformance } from './ui/performance.js';
 
 // ------------------------------------------------------
-// BOOTSTRAP
+// MAIN INITIALIZATION
 // ------------------------------------------------------
-window.addEventListener('DOMContentLoaded', () => {
-    // Core DOM references
+function init() {
+    console.log('Naimean v4 booting...');
+
+    // 1. DOM references
     initDomRefs();
 
-    // Systems
-    initMonitors();
-    initCornerScore();
-    initDvd();
-    initAquarium();
-    initPrompt();
+    // 2. Login system (locks the Den)
     initLogin();
+
+    // 3. Monitors boot sequence
+    initMonitors();
+
+    // 4. DVD system (Big TV)
+    initDvd();
+
+    // 5. Aquarium system (Right monitor)
+    initAquarium();
+
+    // 6. Prompt terminal
+    initPrompt();
+
+    // 7. Tools panel
     initTools();
+
+    // 8. Hotspots
     initHotspots();
 
-    // UI
+    // 9. Performance overlay
     initPerformance();
-});
+
+    console.log('Naimean v4 initialized.');
+}
+
+// ------------------------------------------------------
+// START
+// ------------------------------------------------------
+window.addEventListener('DOMContentLoaded', init);
