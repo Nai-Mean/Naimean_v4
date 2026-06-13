@@ -1,7 +1,6 @@
 // systems/hotspots.js
 
 import { dom } from '../core/domRefs.js';
-import { state } from '../core/state.js';
 
 // ------------------------------------------------------
 // INTERNAL STATE
