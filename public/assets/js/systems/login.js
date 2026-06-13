@@ -39,19 +39,6 @@ function lockDen() {
 }
 
 // ------------------------------------------------------
-// EVENT HANDLERS
-// ------------------------------------------------------
-function onKeyDown(e) {
-    if (e.key === 'Enter') {
-        unlockDen();
-    }
-}
-
-function onLoginClick() {
-    unlockDen();
-}
-
-// ------------------------------------------------------
 // PUBLIC INIT
 // ------------------------------------------------------
 export function initLogin() {
@@ -60,13 +47,8 @@ export function initLogin() {
         return;
     }
 
-    // Login requirement disabled for easier testing
+    // Login requirement disabled so the den is immediately accessible
     unlockDen();
-
-    // Events (if present)
-    if (dom.loginUser) dom.loginUser.addEventListener('keydown', onKeyDown);
-    if (dom.loginPass) dom.loginPass.addEventListener('keydown', onKeyDown);
-    if (dom.loginButton) dom.loginButton.addEventListener('click', onLoginClick);
 
     console.log('Login system initialized');
 }
