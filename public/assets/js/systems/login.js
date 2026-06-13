@@ -39,23 +39,16 @@ function lockDen() {
 }
 
 // ------------------------------------------------------
-// AUTH LOGIC
-// ------------------------------------------------------
-function attemptLogin() {
-    unlockDen();
-}
-
-// ------------------------------------------------------
 // EVENT HANDLERS
 // ------------------------------------------------------
 function onKeyDown(e) {
     if (e.key === 'Enter') {
-        attemptLogin();
+        unlockDen();
     }
 }
 
 function onLoginClick() {
-    attemptLogin();
+    unlockDen();
 }
 
 // ------------------------------------------------------
