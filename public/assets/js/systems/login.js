@@ -4,12 +4,6 @@ import { dom } from '../core/domRefs.js';
 import { state } from '../core/state.js';
 
 // ------------------------------------------------------
-// CONFIG
-// ------------------------------------------------------
-const VALID_USERNAME = 'matt';
-const VALID_PASSWORD = 'den';
-
-// ------------------------------------------------------
 // INTERNAL STATE
 // ------------------------------------------------------
 let isLocked = true;
@@ -49,14 +43,7 @@ function lockDen() {
 // AUTH LOGIC
 // ------------------------------------------------------
 function attemptLogin() {
-    const user = dom.loginUser.value.trim().toLowerCase();
-    const pass = dom.loginPass.value.trim().toLowerCase();
-
-    if (user === VALID_USERNAME && pass === VALID_PASSWORD) {
-        unlockDen();
-    } else {
-        showLoginError('Invalid credentials');
-    }
+    unlockDen();
 }
 
 // ------------------------------------------------------
@@ -76,18 +63,18 @@ function onLoginClick() {
 // PUBLIC INIT
 // ------------------------------------------------------
 export function initLogin() {
-    if (!dom.loginScreen || !dom.loginUser || !dom.loginPass || !dom.loginButton) {
+    if (!dom.loginScreen || !dom.denContainer) {
         console.warn('Login DOM missing — skipping login init');
         return;
     }
 
-    // Start locked
-    lockDen();
+    // Login requirement disabled for easier testing
+    unlockDen();
 
-    // Events
-    dom.loginUser.addEventListener('keydown', onKeyDown);
-    dom.loginPass.addEventListener('keydown', onKeyDown);
-    dom.loginButton.addEventListener('click', onLoginClick);
+    // Events (if present)
+    if (dom.loginUser) dom.loginUser.addEventListener('keydown', onKeyDown);
+    if (dom.loginPass) dom.loginPass.addEventListener('keydown', onKeyDown);
+    if (dom.loginButton) dom.loginButton.addEventListener('click', onLoginClick);
 
     console.log('Login system initialized');
 }
