@@ -1,4 +1,4 @@
-# Trojan Courthouse
+# (Plan) Trojan Courthouse
 
 ## Vision Statement
 Odysseus is a multi-agent adjudication system designed to establish Canon through examination rather than authority.

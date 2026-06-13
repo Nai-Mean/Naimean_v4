@@ -7,24 +7,24 @@ public/
   assets/
     js/
       core/
-        constants.js
-        state.js
-        utils.js
-        media.js
-        domRefs.js
+        constants.js    ← (Plan) not yet created
+        state.js        ← ✅ implemented
+        utils.js        ← ✅ implemented
+        media.js        ← (Plan) not yet created
+        domRefs.js      ← ✅ implemented
       systems/
-        monitors.js
-        dvd.js
-        cornerScore.js
-        aquarium.js
-        prompt.js
-        login.js
-        tools.js
-        hotspots.js
+        monitors.js     ← ✅ implemented
+        dvd.js          ← ✅ implemented
+        cornerScore.js  ← ✅ implemented
+        aquarium.js     ← ✅ implemented
+        prompt.js       ← ✅ implemented
+        login.js        ← ✅ implemented
+        tools.js        ← ✅ implemented
+        hotspots.js     ← ✅ implemented
       ui/
-        overlays.js
-        performance.js
-      index.js
+        overlays.js     ← (Plan) not yet created
+        performance.js  ← ✅ implemented
+      index.js          ← ✅ implemented
     css/
     video/
     images/

@@ -30,8 +30,8 @@ Every policy or tool document must follow this exact structure to ensure consist
 
 ## 5. Validation & Drift Guard
 We treat documentation as an extension of our testing suite:
-- **Drift Checks:** Before a push, run `scripts/check-drift.js` to ensure the code in the Markdown files matches the production code.
-- **Smoke Tests:** Every component has a corresponding validator script. If the system drifts during a change, the `healthCheck.js` orchestrator will trigger a browser warning.
+- **(Plan)** **Drift Checks:** Before a push, run `scripts/check-drift.js` to ensure the code in the Markdown files matches the production code. *(script not yet created)*
+- **(Plan)** **Smoke Tests:** Every component has a corresponding validator script. If the system drifts during a change, the `healthCheck.js` orchestrator will trigger a browser warning. *(script not yet created)*
 
 ## 6. Changelog
 | Date | Commit | Description |

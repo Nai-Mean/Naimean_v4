@@ -1,4 +1,4 @@
-# Courtroom Plan Long
+# (Plan) Courtroom Plan Long
 
 ## [Vision and Philosophy](Courtroom_2.md)
 Odysseus is a multi-agent adjudication system designed to establish Canon through examination rather than authority. Rather than relying upon a single model response, Odysseus convenes a Court where independent witnesses review, findings are challenged, and a consensus is reached through voting and arbitration. Truth creates authority, and reputation follows performance.
