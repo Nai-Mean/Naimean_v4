@@ -13,7 +13,7 @@
     <!-- ------------------------------------------------------
          LOGIN SCREEN
     ------------------------------------------------------ -->
-    <div id="login-screen" class="active">
+    <div id="login-screen">
         <div id="login-box">
             <h1>Enter the Den</h1>
             <input id="login-input" type="password" placeholder="Password">
@@ -24,13 +24,20 @@
     <!-- ------------------------------------------------------
          MAIN DEN CONTAINER
     ------------------------------------------------------ -->
-    <div id="den-container">
+    <div id="den-container" class="active">
 
         <!-- LEFT MONITOR -->
         <div id="left-monitor" class="monitor">
             <div id="left-monitor-content">
-                <!-- Left monitor content goes here -->
-            </div>
+                    <iframe
+                        id="left-monitor-iframe"
+                        src="https://www.madmedia.com"
+                        title="Mad Media"
+                        frameborder="0"
+                        allowfullscreen
+                        style="width:100%;height:100%;border:none;"
+                    ></iframe>
+                </div>
         </div>
 
         <!-- BIG TV (DVD BOUNCE) -->

@@ -5,7 +5,7 @@ import { dom } from '../core/domRefs.js';
 // ------------------------------------------------------
 // INTERNAL STATE
 // ------------------------------------------------------
-let isLocked = true;
+let isLocked = false;
 
 // ------------------------------------------------------
 // UI HELPERS
@@ -47,8 +47,19 @@ export function initLogin() {
         return;
     }
 
-    // Login requirement disabled so the den is immediately accessible
-    unlockDen();
+    // Wire up the Unlock button to authenticate
+    const btn = document.getElementById('login-btn');
+    const input = document.getElementById('login-input');
+
+    if (btn && input) {
+        btn.addEventListener('click', () => {
+            unlockDen();
+        });
+
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') unlockDen();
+        });
+    }
 
     console.log('Login system initialized');
 }
