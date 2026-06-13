@@ -32,8 +32,7 @@ const HOTSPOT_MAP = [
         id: 'hotspot-login',
         element: () => dom.hotspotLogin,
         action: () => {
-            if (dom.loginScreen) dom.loginScreen.classList.remove('active');
-            if (dom.denContainer) dom.denContainer.classList.add('active');
+            if (dom.loginScreen) dom.loginScreen.classList.add('active');
         }
     },
     {
