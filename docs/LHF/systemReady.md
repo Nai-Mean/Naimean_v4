@@ -1,4 +1,4 @@
-## 5. Added "System Ready" indicator
+## (Plan) 5. Added "System Ready" indicator
 A visual confirmation that the application has finished all boot processes and is ready for user interaction.
 
 ### Why

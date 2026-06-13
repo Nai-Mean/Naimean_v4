@@ -1,4 +1,4 @@
-AI Core, Configuration, Deployment, and Operations
+(Plan) AI Core, Configuration, Deployment, and Operations
 
 Purpose
 

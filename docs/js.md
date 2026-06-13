@@ -1,4 +1,6 @@
-# js Folder Documentation
+# (Legacy) js Folder Documentation
+
+> **Legacy Note:** This document describes an outdated `public/js/` directory structure. The actual JavaScript is organized under `public/assets/js/` (with `core/`, `systems/`, and `ui/` subfolders). Only `public/js/bootBanner.js` exists at this path. See `docs/Architecture.md` for the current structure.
 
 ## 1. Title & Description
 Documentation for the JavaScript components of the Naimean_v4 project, located in the `public/js` directory.

@@ -1,6 +1,6 @@
 Here’s the current structure for trojan_courthouse1.md:
 
-Trojan Courthouse
+(Plan) Trojan Courthouse
 
 Vision Statement
 
